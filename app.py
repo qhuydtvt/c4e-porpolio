@@ -1,20 +1,20 @@
 from flask import *
-from movie import Movie
-from mlab import *
+from flask_login import *
+from models.portfolio import Portfolio
+from models.mlab import *
 
 app = Flask(__name__)
-mlab_connect()
+app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOn"
+
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 @app.route('/')
 def index():
-    return render_template("index.html", movies = Movie.objects)
+    return render_template("index.html", porfolios = Portfolio.objects)
 
 if __name__ == '__main__':
-
+    mlab_connect()
     app.run()
-    #
-    # movie1 = Movie(title="Terminator", desc="Haha", img_link=TEST_IMG_LINK)
-    # movie1.save()
-    # movie2 = Movie(title="Fast & furious", desc="Hihi", img_link=TEST_IMG_LINK2)
-    # movie2.save()
+
 
