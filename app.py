@@ -5,7 +5,6 @@ from flask_login import *
 from models.mlab import *
 from models.portfolio import *
 from models.users import *
-from admin import *
 
 app = Flask(__name__)
 app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOn"
