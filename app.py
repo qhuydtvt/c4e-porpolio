@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOn"
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app)
-
+admin.init(app)
 mlab_connect()
 
 @app.route('/')
@@ -43,5 +43,5 @@ def user_loader(email):
 
 
 if __name__ == '__main__':
-    admin.init(app)
+
     app.run()
