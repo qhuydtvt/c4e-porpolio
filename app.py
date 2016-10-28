@@ -4,13 +4,13 @@ import flask_login
 from models.mlab import *
 from models.portfolio import *
 from models.users import User
-import admin
+# import admin
 
 app = Flask(__name__)
 app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOn"
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app)
-admin.init(app)
+# admin.init(app)
 mlab_connect()
 
 @app.route('/')
@@ -43,5 +43,4 @@ def user_loader(email):
 
 
 if __name__ == '__main__':
-
     app.run()
