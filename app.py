@@ -6,9 +6,6 @@ from models.mlab import *
 app = Flask(__name__)
 app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOn"
 
-login_manager = LoginManager()
-login_manager.init_app(app)
-
 @app.route('/')
 def index():
     return render_template("index.html", porfolios = Portfolio.objects)
