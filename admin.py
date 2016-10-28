@@ -28,6 +28,11 @@ class Post(Document):
     inner = ListField(EmbeddedDocumentField(Comment))
     lols = ListField(StringField(max_length=20))
 
+class Project(Document):
+    title = StringField(max_length=20, required=True)
+    description = StringField(max_length=100, required=True)
+    image = ImageField(thumbnail_size=(100, 100, True))
+
 
 class File(Document):
     name = StringField(max_length=20)
@@ -95,8 +100,4 @@ def init(app):
     # Add views
     admin.add_view(UserView(User))
     admin.add_view(ModelView(Tag))
-    admin.add_view(PostView(Post))
-    admin.add_view(ModelView(File))
-    admin.add_view(ModelView(Image))
-
-
+    admin.add_view(ModelView(Project))
