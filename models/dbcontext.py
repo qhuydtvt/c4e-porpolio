@@ -1,6 +1,6 @@
 from models.teamrole import *
 from models.portfolio import *
-from models.user import *
+from models.users import *
 from models.mlab import *
 
 def add_team_roles():
