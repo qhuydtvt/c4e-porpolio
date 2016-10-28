@@ -7,7 +7,7 @@ mlab_connect()
 
 @app.route('/')
 def index():
-    return "Hello"
+    return render_template("index.html", porfolios=Portfolio.objects)
 
 if __name__ == '__main__':
     app.run()
