@@ -2,6 +2,9 @@
 # Flask
 # ----------------------
 flask
+mongoengine
+flask-login
+flask-mongoengine
 
 
 # ----------------------
@@ -15,4 +18,4 @@ mock
 # ----------------------
 gevent
 gunicorn
-mongoengine
+
