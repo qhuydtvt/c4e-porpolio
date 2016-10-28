@@ -1,6 +1,7 @@
 from flask import *
 from models.mlab import *
 from models.portfolio import *
+from flask_login import *
 
 app = Flask(__name__)
 mlab_connect()
