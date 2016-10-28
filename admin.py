@@ -12,7 +12,6 @@ from flask_admin.contrib.mongoengine import ModelView
 
 class Tag(Document):
     name = StringField(max_length=10)
-
     def __unicode__(self):
         return self.name
 

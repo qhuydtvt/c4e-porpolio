@@ -5,6 +5,7 @@ flask
 flask-admin
 flask-login
 mongoengine
+flask-mongoengine
 
 
 # ----------------------
