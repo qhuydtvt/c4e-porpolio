@@ -1,5 +1,6 @@
 import datetime
 from flask import *
+from models.users import  User
 
 import flask_login as login
 import flask_admin
@@ -8,26 +9,6 @@ from flask_admin.form import rules
 from flask_admin.contrib.mongoengine import ModelView
 
 # Define mongoengine documents
-class User(Document):
-    email = StringField(max_length=40)
-    tags = ListField(ReferenceField('Tag'))
-    password = StringField(max_length=40)
-
-    # Flask-Login integration
-    def is_authenticated(self):
-        return True
-
-    def is_active(self):
-        return True
-
-    def is_anonymous(self):
-        return False
-
-    def get_id(self):
-        return self.email
-
-    def __unicode__(self):
-        return self.email
 
 class Tag(Document):
     name = StringField(max_length=10)
@@ -109,12 +90,6 @@ class AdminIndexView(flask_admin.AdminIndexView):
 #         return User.objects(email=email).first()
 
 def admin_init(app):
-    login_manager = login.LoginManager()
-    login_manager.init_app(app)
-
-    @login_manager.user_loader
-    def user_loader(email):
-        return User.objects(email=email).first()
     # Create admin
     admin = flask_admin.Admin(app, 'C4E-Portfolio', index_view=AdminIndexView())
 

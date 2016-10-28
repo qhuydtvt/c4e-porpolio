@@ -1,36 +1,22 @@
 from mongoengine import *
-import flask_login
 
 class User(Document):
-    email = StringField()
-    password = StringField()
+    email = StringField(max_length=40)
+    tags = ListField(ReferenceField('Tag'))
+    password = StringField(max_length=40)
 
-def dump_user():
-    for user in User.objects:
-        user.delete()
+    # Flask-Login integration
+    def is_authenticated(self):
+        return True
 
-class UserLogin(flask_login.UserMixin):
-    def __init__(self, user):
-        super(UserLogin, self).__init__()
-        if user:
-            self.id = user.email
+    def is_active(self):
+        return True
 
-    @classmethod
-    def check(self, email, password):
-        user = User.objects(email=email).first()
-        if user :
-            print("user not None")
-            if(user.password == password):
-                print("password valid")
-                return UserLogin(user)
-        return None
+    def is_anonymous(self):
+        return False
 
-    @classmethod
-    def get(cls, email):
-        user = User.objects(email=email).first()
-        if not user:
-            print("User is None")
-            return None
-        print("User is not None")
-        user_login = UserLogin(user)
-        return user_login
+    def get_id(self):
+        return self.email
+
+    def __unicode__(self):
+        return self.email
