@@ -1,17 +1,16 @@
 from flask import *
-from flask_login import *
 from models.portfolio import Portfolio
 from models.mlab import *
 
 app = Flask(__name__)
-app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOn"
+mlab_connect()
 
 @app.route('/')
 def index():
-    return render_template("index.html", porfolios = Portfolio.objects)
+    return "Hello"
 
 if __name__ == '__main__':
-    mlab_connect()
+
     app.run()
 
 
