@@ -7,6 +7,7 @@ import flask_admin
 from mongoengine import *
 from flask_admin.form import rules
 from flask_admin.contrib.mongoengine import ModelView
+from models.projects import Project
 
 # Define mongoengine documents
 
@@ -28,10 +29,7 @@ class Post(Document):
     inner = ListField(EmbeddedDocumentField(Comment))
     lols = ListField(StringField(max_length=20))
 
-class Project(Document):
-    title = StringField(max_length=20, required=True)
-    description = StringField(max_length=100, required=True)
-    image = ImageField(thumbnail_size=(100, 100, True))
+
 
 
 class File(Document):
