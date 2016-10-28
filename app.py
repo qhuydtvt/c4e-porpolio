@@ -4,6 +4,7 @@ import flask_login
 from models.mlab import *
 from models.portfolio import *
 from models.users import User
+import admin
 
 app = Flask(__name__)
 app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOn"
@@ -27,7 +28,7 @@ def login():
         if user:
             if user.password == password:
                 flask_login.login_user(user)
-                return redirect("/abc")
+                return redirect("/admin")
         return "Invalid credentials"
 
 @app.route('/logout', methods=["GET", "POST"])
@@ -39,12 +40,7 @@ def logout():
 def user_loader(email):
     return User.objects(email=email).first()
 
-@app.route("/abc")
-@flask_login.login_required
-def abc():
-    return "abc"
 
 if __name__ == '__main__':
+    admin.init(app)
     app.run()
-
-

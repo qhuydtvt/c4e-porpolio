@@ -89,7 +89,7 @@ class AdminIndexView(flask_admin.AdminIndexView):
 #     def load_user(email):
 #         return User.objects(email=email).first()
 
-def admin_init(app):
+def init(app):
     # Create admin
     admin = flask_admin.Admin(app, 'C4E-Portfolio', index_view=AdminIndexView())
 
