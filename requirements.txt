@@ -2,7 +2,7 @@
 # Flask
 # ----------------------
 flask
-mongoengine
+flask-admin
 flask-login
 flask-mongoengine
 
