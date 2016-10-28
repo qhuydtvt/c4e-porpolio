@@ -41,7 +41,7 @@ def user_loader(email):
     return UserLogin.get(email)
 
 if __name__ == '__main__':
-    admin_init(app)
+    # admin_init(app)
     app.run()
 
 
