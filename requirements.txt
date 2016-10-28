@@ -4,6 +4,7 @@
 flask
 flask-admin
 flask-login
+mongoengine
 
 
 # ----------------------
