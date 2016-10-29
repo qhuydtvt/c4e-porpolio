@@ -96,6 +96,6 @@ def init(app):
     admin = flask_admin.Admin(app, 'C4E-Portfolio', index_view=AdminIndexView())
 
     # Add views
+    admin.add_view(ModelView(Project))
     admin.add_view(UserView(User))
     admin.add_view(ModelView(Tag))
-    admin.add_view(ModelView(Project))
