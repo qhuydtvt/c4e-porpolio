@@ -2,8 +2,9 @@
 {% block content %}
     <div class="w3-row-padding">
       {% for project in projects %}
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="/project-image/{{ project.id }}" alt="{{ project.title }}" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-third w3-container">
+      <img src="/project-image/{{ project.id }}" alt="{{ project.title }}"
+           style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
         <p><b>{{ project.title }}</b></p>
         <p>{{ project.description }}</p>
