@@ -22,9 +22,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </a>
       <br><br>
   </div>
-  <a href="#portfolio" onclick="w3_close()" class="w3-padding w3-text-teal">PORTFOLIO</a>
+  <a href="{{ url_for("index") }}" onclick="w3_close()" class="w3-padding">PORTFOLIO</a>
   <a href="{{ url_for("login") }}" class="w3-padding">LOGIN</a>
-  <a href="#about" onclick="w3_close()" class="w3-padding">ABOUT</a>
+  <a href="#about" onclick=w3_close() class="w3-padding">ABOUT</a>
   <a href="#contact" onclick="w3_close()" class="w3-padding">CONTACT</a>
 
 
@@ -47,7 +47,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container" id="portfolio">
-    <a href="http://techkids.vn"><img src="../static/images/techkids.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+{#    <a href="http://techkids.vn"><img src="../static/images/techkids.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>#}
     <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <h1><b>TechKids Portfolio</b></h1>
     <div class="w3-section w3-bottombar w3-padding-16">
@@ -55,6 +55,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <button class="w3-btn">ALL</button>
       <button class="w3-btn w3-white"><i class="fa fa-cube w3-margin-right"></i>C4E</button>
       <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-fire w3-margin-right"></i>Code Intensive</button>
+      <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-html5 w3-margin-right"></i>Web</button>
       <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-mobile-phone w3-margin-right"></i>Android</button>
       <button class="w3-btn w3-white w3-hide-small"><i class="fa fa-mobile-phone w3-margin-right"></i>iOS</button>
     </div>
