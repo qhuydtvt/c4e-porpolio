@@ -51,7 +51,7 @@ def get_image(id):
     if image:
         return send_file(image, mimetype="image")
     else:
-        return "404"
+        return "405"
 
 if __name__ == '__main__':
 
