@@ -10,7 +10,7 @@ import tempfile
 import base64
 
 app = Flask(__name__)
-app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOn"
+app.secret_key = "fD226QUKwZ5yta8yzFhpnmEdIfsbvmXjTc2qwkOD"
 login_manager = flask_login.LoginManager()
 login_manager.init_app(app)
 admin.init(app)
