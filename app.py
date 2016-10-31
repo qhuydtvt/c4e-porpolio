@@ -54,5 +54,4 @@ def get_image(id):
         return "405"
 
 if __name__ == '__main__':
-
-    app.run(port=5004)
+    app.run()
